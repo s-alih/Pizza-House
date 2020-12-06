@@ -37,8 +37,17 @@
             @endif
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <h1>Pizza houes</h1>
-                <h3>World number one pizzahoue</h3>
+                <h1>Pizzas</h1>
+                @foreach($pizzas as $pizza)
+                    <div>
+                     {{$loop->index}}   {{ $pizza['type'] }} -- {{$pizza['price']}}
+                     @if($loop->first)
+                     <span>Good Morning Machans</span>
+                     @endif 
+                    </div>
+                    
+                @endforeach
+
         </div>
     </body>
 </html>
